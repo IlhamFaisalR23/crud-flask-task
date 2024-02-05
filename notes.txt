@@ -1,0 +1,26 @@
+Remade HI - CTaskManager (Pengelolaan Tugas di Bidang Akademis/Kerja)
+
+Penggunaan = Penggunaan mandiri atau personal
+
+{Pengguna}
+(1) Siswa/Pekerja/Mahasiswa
+
+{Hak Akses}
+(1) - Melihat daftar tugas yang telah ditambahkan
+    - Menambahkan daftar tugas sesuai format yang disediakan
+    - Mengedit / mengubah daftar tugas
+    - Menghapus daftar tugas
+    - Melihat jumlah tugas berdasarkan status tugas
+
+{Konsep Keseluruhan}
+1. Pengguna melakukan login
+2. Halaman Dashboard dengan statistik/grafik
+3. Menu daftar tugas + menu edit & hapus data + search
+4. Menu tambah tugas
+5. Menu logout
+
+{Kemungkinan Tabel}
+Pengguna
+Tugas
+Mata Kuliah
+Status Pengerjaan

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url(https://source.unsplash.com/1280x800/?notes-college/);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .login-form {
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="login-form">
+  <h2 class="text-center mb-4">Register</h2>
+  <h2 class="text-center mb-4">HI - CTask Manager</h2>
+  <form action="{{ url_for('register') }}" method="post">
+    <div class="mb-3">
+        <input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Nama Lengkap" required>
+    </div>
+    <div class="mb-3">
+      <input type="text" name="email" class="form-control" autocomplete="off" id="email" placeholder="Email" required>
+    </div>
+    <div class="mb-3">
+      <div class="input-group">
+        <input type="password" name="password" class="form-control" autocomplete="off" id="password" placeholder="Password" required>
+        <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <h6 class="text-center mb-4">{{ msg }}</h6>
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <p>Sudah punya akun? <a href="{{ url_for('login') }}">Login</a></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function togglePassword() {
+    var passwordInput = document.getElementById("password");
+    var icon = document.querySelector(".fa-eye");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    } else {
+      passwordInput.type = "password";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    }
+  }
+</script>
+</body>
+</html>
